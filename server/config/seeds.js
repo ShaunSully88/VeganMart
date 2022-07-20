@@ -22,7 +22,7 @@ db.once('open', async () => {
       name: 'Beyond Beef',
       description:
         'Beyond the Meat ground beef.',
-      image: 'cookie-tin.jpg',
+      image: 'beyond-beef.jpg',
       category: categories[0]._id,
       price: 9.99,
       quantity: 500
@@ -31,7 +31,7 @@ db.once('open', async () => {
       name: 'Beyond Burger',
       description:
         'Beyond the Meat plant based burger.',
-      image: 'canned-coffee.jpg',
+      image: 'beyond-burger.jpg',
       category: categories[0]._id,
       price: 7.99,
       quantity: 500
@@ -41,7 +41,7 @@ db.once('open', async () => {
       category: categories[0]._id,
       description:
         'Very Good Butchers plant based burgers.',
-      image: 'toilet-paper.jpg',
+      image: 'good-burger.jpg',
       price: 11.99,
       quantity: 500
     },
@@ -50,7 +50,7 @@ db.once('open', async () => {
       category: categories[0]._id,
       description:
         'Very Good Butchers plant based steak.',
-      image: 'soap.jpg',
+      image: 'good-steak.jpg',
       price: 7.19,
       quantity: 500
     },
@@ -59,7 +59,7 @@ db.once('open', async () => {
       category: categories[0]._id,
       description:
         'Beyond the Meat plant based sausage.',
-      image: 'wooden-spoons.jpg',
+      image: 'beyond-sausage.jpg',
       price: 14.99,
       quantity: 100
     },
@@ -68,7 +68,7 @@ db.once('open', async () => {
       category: categories[0]._id,
       description:
         'Gusta Vegan plant based sausage.',
-      image: 'camera.jpg',
+      image: 'gusta-sausage.jpg',
       price: 6.49,
       quantity: 300
     },
@@ -76,7 +76,7 @@ db.once('open', async () => {
         name: 'Sunrise Tofu',
         category: categories[0]._id,
         description: ' Extra firm tofu.',
-        image: '',
+        image: 'tofu.jpg',
         price: 2.99,
         quantity: 500
     },
@@ -85,7 +85,7 @@ db.once('open', async () => {
       category: categories[1]._id,
       description:
         'Califia Farms Unsweetened Oat Milk.',
-      image: 'tablet.jpg',
+      image: 'califia-oat.jpg',
       price: 6.99,
       quantity: 100
     },
@@ -94,7 +94,7 @@ db.once('open', async () => {
       category: categories[1]._id,
       description:
         'Califia Farms Unsweetened Almond Milk.',
-      image: 'bedtime-book.jpg',
+      image: 'califia-almond.jpg',
       price: 6.99,
       quantity: 100
     },
@@ -102,7 +102,7 @@ db.once('open', async () => {
       name: 'Coconut Milk',
       category: categories[1]._id,
       description: 'Everland Rich Organic Coconut Milk.',
-      image: 'spinning-top.jpg',
+      image: 'everland-coconut.jpg',
       price: 2.99,
       quantity: 100
     },
@@ -111,8 +111,8 @@ db.once('open', async () => {
       category: categories[1]._id,
       description:
         'Isola Bio Light Oat Milk.',
-      image: 'plastic-horses.jpg',
-      price: 3.99,
+      image: 'isola-oat.jpg',
+      price: 6.99,
       quantity: 1000
     },
     {
@@ -120,8 +120,8 @@ db.once('open', async () => {
       category: categories[1]._id,
       description:
         'Native Forest Organic Classic Coconut Milk.',
-      image: 'teddy-bear.jpg',
-      price: 4.59,
+      image: 'native-coconut.jpg',
+      price: 2.59,
       quantity: 100
     },
     {
@@ -129,7 +129,7 @@ db.once('open', async () => {
       category: categories[1]._id,
       description:
         'Pacific Barista Series Unsweetend Almond Milk.',
-      image: 'alphabet-blocks.jpg',
+      image: 'pacific-barista.jpg',
       price: 5.99,
       quantity: 100
     },
@@ -137,16 +137,16 @@ db.once('open', async () => {
         name: 'Feta Cheese',
         description:
           'Violife "just like" feta cheese block.',
-        image: 'cookie-tin.jpg',
+        image: 'feta-cheese.jpg',
         category: categories[1]._id,
-        price: 6.49,
+        price: 5.49,
         quantity: 500
       },
       {
         name: 'Cheese Slices',
         description:
           'Violife "just like" cheddar cheese slices.',
-        image: 'canned-coffee.jpg',
+        image: 'cheese-slices.jpg',
         category: categories[1]._id,
         price: 5.99,
         quantity: 500
@@ -156,8 +156,8 @@ db.once('open', async () => {
         category: categories[1]._id,
         description:
           'Violife "just like" parmesan cheese wedge.',
-        image: 'toilet-paper.jpg',
-        price: 11.99,
+        image: 'parmesan.jpg',
+        price: 5.99,
         quantity: 500
       },
       {
@@ -165,8 +165,8 @@ db.once('open', async () => {
         category: categories[1]._id,
         description:
           'Violife "just like" provolone cheese slices ',
-        image: 'soap.jpg',
-        price: 7.19,
+        image: 'provolone.jpg',
+        price: 5.99,
         quantity: 500
       },
       {
@@ -174,8 +174,8 @@ db.once('open', async () => {
         category: categories[1]._id,
         description:
           'Violife "just like" cheddar cheese block.',
-        image: 'wooden-spoons.jpg',
-        price: 7.99,
+        image: 'cheddar.jpg',
+        price: 5.99,
         quantity: 100
       },
       {
@@ -183,7 +183,7 @@ db.once('open', async () => {
         category: categories[1]._id,
         description:
           'Coconut milk yogurt made by Maison Riviera.',
-        image: 'camera.jpg',
+        image: 'yogurt.jpg',
         price: 6.49,
         quantity: 300
       },
@@ -192,7 +192,7 @@ db.once('open', async () => {
         category: categories[1]._id,
         description:
           'Strawberry oat milk yogurt by Maison Riviera.',
-        image: 'tablet.jpg',
+        image: 'strawberry-yogurt.jpg',
         price: 6.99,
         quantity: 100
       },
@@ -201,7 +201,7 @@ db.once('open', async () => {
         category: categories[1]._id,
         description:
           'Buttery spread by Earth Balance.',
-        image: 'bedtime-book.jpg',
+        image: 'earth-butter.jpg',
         price: 5.99,
         quantity: 100
       },
@@ -209,7 +209,7 @@ db.once('open', async () => {
         name: 'Butter',
         category: categories[1]._id,
         description: 'Cooking and Baking butter stick by Earth Balance.',
-        image: 'spinning-top.jpg',
+        image: 'butter-sticks.jpg',
         price: 2.99,
         quantity: 100
       },
@@ -218,7 +218,7 @@ db.once('open', async () => {
         category: categories[1]._id,
         description:
           'Soy Free buttery spread by Earth Balance.',
-        image: 'plastic-horses.jpg',
+        image: 'soyfree-butter.jpg',
         price: 3.99,
         quantity: 1000
       },
@@ -227,7 +227,7 @@ db.once('open', async () => {
         category: categories[2]._id,
         description:
           'Lettuce.',
-        image: 'teddy-bear.jpg',
+        image: 'lettuce.jpg',
         price: 2.59,
         quantity: 100
       },
@@ -236,7 +236,7 @@ db.once('open', async () => {
         category: categories[2]._id,
         description:
           'Spinach.',
-        image: 'alphabet-blocks.jpg',
+        image: 'spinach.jpg',
         price: 3.99,
         quantity: 100
       },
@@ -244,7 +244,7 @@ db.once('open', async () => {
         name: 'Kale',
         description:
           'Kale.',
-        image: 'cookie-tin.jpg',
+        image: 'kale.jpg',
         category: categories[2]._id,
         price: 3.99,
         quantity: 500
@@ -253,17 +253,17 @@ db.once('open', async () => {
         name: 'Cucumber',
         description:
           'Cucumber.',
-        image: 'canned-coffee.jpg',
+        image: 'cucumber.jpg',
         category: categories[2]._id,
         price: .99,
         quantity: 500
       },
       {
-        name: 'Zuchinni',
+        name: 'Zucchini',
         category: categories[2]._id,
         description:
-          'Zuchinni.',
-        image: 'toilet-paper.jpg',
+          'Zucchini.',
+        image: 'zucchini.jpg',
         price: .99,
         quantity: 500
       },
@@ -272,7 +272,7 @@ db.once('open', async () => {
         category: categories[2]._id,
         description:
           'Tomato.',
-        image: 'soap.jpg',
+        image: 'tomato.jpg',
         price: .99,
         quantity: 500
       },
@@ -281,7 +281,7 @@ db.once('open', async () => {
         category: categories[2]._id,
         description:
           'Cherry Tomatoes.',
-        image: 'wooden-spoons.jpg',
+        image: 'cherry-tomato.jpg',
         price: .99,
         quantity: 100
       },
@@ -290,7 +290,7 @@ db.once('open', async () => {
         category: categories[2]._id,
         description:
           'Red Pepper.',
-        image: 'camera.jpg',
+        image: 'red-pepper.jpg',
         price: 1.49,
         quantity: 300
       },
@@ -299,7 +299,7 @@ db.once('open', async () => {
         category: categories[2]._id,
         description:
           'Green Pepper.',
-        image: 'tablet.jpg',
+        image: 'green-pepper.jpg',
         price: 1.49,
         quantity: 100
       },
@@ -308,7 +308,7 @@ db.once('open', async () => {
         category: categories[2]._id,
         description:
           'Yellow Onion.',
-        image: 'bedtime-book.jpg',
+        image: 'yellow-onion.jpg',
         price: .99,
         quantity: 100
       },
@@ -316,7 +316,7 @@ db.once('open', async () => {
         name: 'Red Onion',
         category: categories[2]._id,
         description: 'Red Onion.',
-        image: 'spinning-top.jpg',
+        image: 'red-onion.jpg',
         price: .99,
         quantity: 100
       },
@@ -325,7 +325,7 @@ db.once('open', async () => {
         category: categories[2]._id,
         description:
           'Organic Bananas.',
-        image: 'plastic-horses.jpg',
+        image: 'bananas.jpg',
         price: 3.99,
         quantity: 1000
       },
@@ -334,7 +334,7 @@ db.once('open', async () => {
         category: categories[2]._id,
         description:
           'Red Apple.',
-        image: 'teddy-bear.jpg',
+        image: 'red-apple.jpg',
         price: .99,
         quantity: 100
       },
@@ -343,7 +343,7 @@ db.once('open', async () => {
         category: categories[2]._id,
         description:
           'Green Apple.',
-        image: 'alphabet-blocks.jpg',
+        image: 'green-apple.jpg',
         price: .99,
         quantity: 100
       },
@@ -351,7 +351,7 @@ db.once('open', async () => {
           name: 'Orange',
           description:
             'Orange.',
-          image: 'cookie-tin.jpg',
+          image: 'orange.jpg',
           category: categories[2]._id,
           price: .99,
           quantity: 500
@@ -360,7 +360,7 @@ db.once('open', async () => {
           name: 'Watermelon',
           description:
             'Watermelon.',
-          image: 'canned-coffee.jpg',
+          image: 'watermelon.jpg',
           category: categories[2]._id,
           price: 2.99,
           quantity: 500
@@ -370,7 +370,7 @@ db.once('open', async () => {
           category: categories[2]._id,
           description:
             'Avocado.',
-          image: 'toilet-paper.jpg',
+          image: 'avocado.jpg',
           price: 1.99,
           quantity: 500
         },
@@ -379,7 +379,7 @@ db.once('open', async () => {
           category: categories[2]._id,
           description:
             'Lime.',
-          image: 'soap.jpg',
+          image: 'lime.jpg',
           price: .99,
           quantity: 500
         },
@@ -388,7 +388,7 @@ db.once('open', async () => {
           category: categories[2]._id,
           description:
             'Lemon.',
-          image: 'wooden-spoons.jpg',
+          image: 'lemon.jpg',
           price: .99,
           quantity: 100
         },
@@ -397,7 +397,7 @@ db.once('open', async () => {
           category: categories[3]._id,
           description:
             'La Croix watermelon flavoured sparkling water.',
-          image: 'camera.jpg',
+          image: 'lacroix-watermelon.jpg',
           price: 1.29,
           quantity: 300
         },
@@ -406,7 +406,7 @@ db.once('open', async () => {
           category: categories[3]._id,
           description:
             'La Croix hibiscus flavoured sparkling water.',
-          image: 'tablet.jpg',
+          image: 'lacroix-hibiscus.jpg',
           price: 1.29,
           quantity: 100
         },
@@ -415,7 +415,7 @@ db.once('open', async () => {
           category: categories[3]._id,
           description:
             'La Croix mango flavoured sparkling water.',
-          image: 'bedtime-book.jpg',
+          image: 'lacroix-mango.jpg',
           price: 1.29,
           quantity: 100
         },
@@ -423,7 +423,7 @@ db.once('open', async () => {
           name: 'Kombucha',
           category: categories[3]._id,
           description: 'Hoochy Booch Bellini kombucha.',
-          image: 'spinning-top.jpg',
+          image: 'bellini-kombucha.jpg',
           price: 2.99,
           quantity: 100
         },
@@ -432,7 +432,7 @@ db.once('open', async () => {
           category: categories[3]._id,
           description:
             'Hoochy Booch Blue Valentine kombucha.',
-          image: 'plastic-horses.jpg',
+          image: 'blue-kombucha.jpg',
           price: 2.99,
           quantity: 100
         },
@@ -441,7 +441,7 @@ db.once('open', async () => {
           category: categories[3]._id,
           description:
             'Two Bears frothed chocolate oat milk.',
-          image: 'teddy-bear.jpg',
+          image: 'bears-chocolate.jpg',
           price: 2.59,
           quantity: 100
         },
@@ -450,8 +450,8 @@ db.once('open', async () => {
           category: categories[3]._id,
           description:
             'Two Bears matcha tea oat milk latte',
-          image: 'alphabet-blocks.jpg',
-          price: 3.99,
+          image: 'bears-matcha.jpg',
+          price: 2.59,
           quantity: 100
         },
         {
@@ -459,7 +459,7 @@ db.once('open', async () => {
             category: categories[4]._id,
             description:
               'Welo chocolate chip probiotic bar.',
-            image: 'alphabet-blocks.jpg',
+            image: 'welo-chip.jpg',
             price: 1.99,
             quantity: 100
           },
@@ -467,7 +467,7 @@ db.once('open', async () => {
               name: 'Granola Bar',
               description:
                 'Welo banana probiotic bar.',
-              image: 'cookie-tin.jpg',
+              image: 'welo-banana.jpg',
               category: categories[4]._id,
               price: 1.99,
               quantity: 500
@@ -476,7 +476,7 @@ db.once('open', async () => {
               name: 'Granola Bar',
               description:
                 'Welo apple crumble probitoic bar.',
-              image: 'canned-coffee.jpg',
+              image: 'welo-apple.jpg',
               category: categories[4]._id,
               price: 1.99,
               quantity: 500
@@ -486,7 +486,7 @@ db.once('open', async () => {
               category: categories[4]._id,
               description:
                 'Beanfields Nacho bean chips.',
-              image: 'toilet-paper.jpg',
+              image: 'beanfields-nacho.jpg',
               price: 3.99,
               quantity: 500
             },
@@ -495,7 +495,7 @@ db.once('open', async () => {
               category: categories[4]._id,
               description:
                 'Que Pasa Ranch tortilla chips.',
-              image: 'soap.jpg',
+              image: 'pasa-ranch.jpg',
               price: 3.99,
               quantity: 500
             },
@@ -504,7 +504,7 @@ db.once('open', async () => {
               category: categories[4]._id,
               description:
                 'Que Pasa nacho tortilla chips.',
-              image: 'wooden-spoons.jpg',
+              image: 'pasa-nacho.jpg',
               price: 3.99,
               quantity: 100
             },
@@ -513,7 +513,7 @@ db.once('open', async () => {
               category: categories[4]._id,
               description:
                 'Beanfields Pico de Gallo bean chips.',
-              image: 'camera.jpg',
+              image: 'beanfields-pico.jpg',
               price: 3.99,
               quantity: 300
             },
@@ -522,7 +522,7 @@ db.once('open', async () => {
               category: categories[4]._id,
               description:
                 'Hippie snacks guacamole avocado crisps.',
-              image: 'tablet.jpg',
+              image: 'hippie-avocado.jpg',
               price: 3.99,
               quantity: 100
             },
@@ -531,7 +531,7 @@ db.once('open', async () => {
               category: categories[4]._id,
               description:
                 'Hippie snacks classic ranch cauliflower crisps.',
-              image: 'bedtime-book.jpg',
+              image: 'hippie-cauli.jpg',
               price: 3.99,
               quantity: 100
             },
@@ -539,7 +539,7 @@ db.once('open', async () => {
               name: 'Crackers',
               category: categories[4]._id,
               description: 'Laiki black rice with cheddar crackers.',
-              image: 'spinning-top.jpg',
+              image: 'laiki-black.jpg',
               price: 2.99,
               quantity: 100
             },
@@ -548,7 +548,7 @@ db.once('open', async () => {
               category: categories[4]._id,
               description:
                 'Laiki red rice with cracked black pepper crackers.',
-              image: 'plastic-horses.jpg',
+              image: 'laiki-red.jpg',
               price: 2.99,
               quantity: 100
             },
@@ -557,7 +557,7 @@ db.once('open', async () => {
               category: categories[5]._id,
               description:
                 'Silver Hills Organic Sprouted Everything Bagels',
-              image: 'teddy-bear.jpg',
+              image: 'everything-bagel.jpg',
               price: 4.59,
               quantity: 100
             },
@@ -566,7 +566,7 @@ db.once('open', async () => {
               category: categories[5]._id,
               description:
                 'Silver Hills Organic sporuted cinnamon raisin bagels',
-              image: 'alphabet-blocks.jpg',
+              image: 'raisin-bagel.jpg',
               price: 4.59,
               quantity: 100
             },
@@ -575,7 +575,7 @@ db.once('open', async () => {
                 category: categories[5]._id,
                 description:
                   'Lita\'s Mexican Foods whole wheat flour tortillas.',
-                image: 'wooden-spoons.jpg',
+                image: 'lita-wholewheat.jpg',
                 price: 3.99,
                 quantity: 100
               },
@@ -584,7 +584,7 @@ db.once('open', async () => {
                 category: categories[5]._id,
                 description:
                   'Lita\'s Mexican Foods white flour tortillas.',
-                image: 'camera.jpg',
+                image: 'lita-white.jpg',
                 price: 3.99,
                 quantity: 300
               },
@@ -593,7 +593,7 @@ db.once('open', async () => {
                 category: categories[5]._id,
                 description:
                   'Silver Hills "Squirrelly" organic sprouted wheat bread',
-                image: 'tablet.jpg',
+                image: 'squirrelly-bread.jpg',
                 price: 4.99,
                 quantity: 100
               },
@@ -602,7 +602,7 @@ db.once('open', async () => {
                 category: categories[5]._id,
                 description:
                   'Silver Hills "The Big 16" organic sprouted wheat bread.',
-                image: 'bedtime-book.jpg',
+                image: 'big-bread.jpg',
                 price: 4.99,
                 quantity: 100
               },
@@ -610,7 +610,7 @@ db.once('open', async () => {
                 name: 'Bread',
                 category: categories[5]._id,
                 description: 'Silver Hills "Soft Wheat" organic sprouted wheat bread.',
-                image: 'spinning-top.jpg',
+                image: 'softwheat-bread.jpg',
                 price: 4.99,
                 quantity: 100
               },
@@ -619,7 +619,7 @@ db.once('open', async () => {
                 category: categories[5]._id,
                 description:
                   'Silver Hills "Organic Multigrain" organic sprouted wheat bread.',
-                image: 'plastic-horses.jpg',
+                image: 'multigrain-bread.jpg',
                 price: 4.99,
                 quantity: 100
               }
