@@ -7,6 +7,18 @@ const resolvers = {
     categories: async () => {
       return await Category.find();
     },
+    order: async (parent, { _id }, context) => {
+      if (context.user) {
+        const user = await User.findById(context.users._id).populate({
+          path: 'orders.products',
+          populate: 'category'
+        });
+
+        return user.orders.id(_id);
+      }
+
+      throw new AuthenticationError('Not logged in');
+    },
     users: async (parent, args, context, info) => {
       return User.find({}).populate("orders").select("-password");
     },
@@ -69,6 +81,18 @@ const resolvers = {
 
       const token = signToken(user);
       return { token, user };
+    },
+    addOrder: async (parent, { products }, context) => {
+      console.log(context);
+      if (context.user) {
+        const order = new Order({ products });
+
+        await User.findByIdAndUpdate(context.user._id, { $push: { orders: order } });
+
+        return order;
+      }
+
+      throw new AuthenticationError('Not logged in');
     },
   },
 };

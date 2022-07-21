@@ -34,6 +34,7 @@ const typeDefs = gql`
   type Order {
     _id: ID
     purchaseDate: String
+    products: [Product]
   }
 
   type Query {
