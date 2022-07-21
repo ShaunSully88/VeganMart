@@ -1,7 +1,10 @@
+const { AuthenticationError } = require('apollo-server-express');
+const { Category, Order } = require('../models');
+
 const resolvers = {
   Query: {
-    helloWorld: () => {
-      return "hello world";
+    categories: async () => {
+      return await Category.find();
     },
   },
 };
