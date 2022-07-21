@@ -630,10 +630,10 @@ db.once('open', async () => {
   await User.deleteMany();
 
   await User.create({
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
+    firstName: 'john',
+    lastName: 'doe',
+    email: 'johndoe@gmail.com',
+    password: 'password',
     orders: []
   });
 

@@ -8,23 +8,29 @@ const userSchema = new Schema({
     unique: true,
     match: [/.+@.+\..+/, "Invalid email!"],
   },
+
   firstName: {
     type: String,
     required: true,
   },
+
   lastName: {
     type: String,
     required: true,
   },
+
   password: {
     type: String,
     required: true,
     minlength: 6,
+    trim: true
   },
+
   createdAt: {
     type: Date,
     default: Date.now,
   },
+
   orders: [
     {
       type: Schema.Types.ObjectId,
