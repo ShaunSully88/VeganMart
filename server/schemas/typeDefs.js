@@ -14,10 +14,15 @@ const typeDefs = gql`
   type Query {
     categories: [Category]
     order(_id: ID!): Order
+    checkout(products: [ID]!): Checkout
   }
 
   type Mutation {
     addOrder(products: [ID]!): Order
+  }
+
+  type Checkout {
+    session: ID
   }
 `;
 
