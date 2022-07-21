@@ -13,7 +13,7 @@ db.once('open', async () => {
     { name: 'Bread' }
   ]);
 
-  console.log(categories);
+  console.log('categories seeded');
 
   await Product.deleteMany();
 
@@ -630,15 +630,11 @@ db.once('open', async () => {
   await User.deleteMany();
 
   await User.create({
-    firstName: 'Pamela',
-    lastName: 'Washington',
-    email: 'pamela@testmail.com',
-    password: 'password12345',
-    orders: [
-      {
-        products: [products[0]._id, products[0]._id, products[1]._id]
-      }
-    ]
+    firstName: 'john',
+    lastName: 'doe',
+    email: 'johndoe@gmail.com',
+    password: 'password',
+    orders: []
   });
 
  
