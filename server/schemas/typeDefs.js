@@ -23,7 +23,7 @@ const typeDefs = gql`
     price: Float
     image: String
     quantity: Int
-    category: [Category]
+    category: Category
   }
 
   type Category {
@@ -45,6 +45,7 @@ const typeDefs = gql`
     product(_id: ID!): Product
     categories: [Category]
     order(_id: ID!): Order
+    orders: [Order]
   }
 
   type Mutation {

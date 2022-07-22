@@ -9,7 +9,7 @@ const resolvers = {
     },
     order: async (parent, { _id }, context) => {
       if (context.user) {
-        const user = await User.findById(context.users._id).populate({
+        const user = await User.findById(context.user._id).populate({
           path: 'orders.products',
           populate: 'category'
         });
@@ -18,6 +18,9 @@ const resolvers = {
       }
 
       throw new AuthenticationError('Not logged in');
+    },
+    orders: async(parent, args, context, info) => {
+      return Order.find({}).populate("products")
     },
     users: async (parent, args, context, info) => {
       return User.find({}).populate("orders").select("-password");
@@ -30,9 +33,6 @@ const resolvers = {
     me: async (parent, args, context, info) => {
       if (context.user) {
         const userData = await User.findOne({ _id: context.user._id })
-          .select("-__v -password")
-          .populate("thoughts")
-          .populate("friends");
 
         return userData;
       }
@@ -83,7 +83,6 @@ const resolvers = {
       return { token, user };
     },
     addOrder: async (parent, { products }, context) => {
-      console.log(context);
       if (context.user) {
         const order = new Order({ products });
 
@@ -96,4 +95,5 @@ const resolvers = {
     },
   },
 };
+
 module.exports = resolvers;
