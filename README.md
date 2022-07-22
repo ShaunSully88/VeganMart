@@ -22,9 +22,13 @@ Users can sign in and began adding items to their online shopping cart. They are
 ## Contributors
 
 Shaun Sullivan - https://github.com/ShaunSully88
+
 Haley Telega - https://github.com/haleytelega
+
 Rosemarie Halim - https://github.com/RosemarieHalim
+
 Andrew Howran - https://github.com/AgentA12
+
 Eric Kohler - https://github.com/eikohler
 
 ## License
