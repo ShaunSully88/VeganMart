@@ -1,10 +1,7 @@
 
 const { Category, Order, User, Product } = require("../models/index");
 const { signToken } = require("../utils/auth");
-const { AuthenticationError } = require("apollo-server-express");
-
 const { AuthenticationError } = require('apollo-server-express');
-const { Category, Order } = require('../models');
 const stripe = require('stripe')(process.env.STRIPE_KEY);
 
 
@@ -26,13 +23,20 @@ const resolvers = {
 
       throw new AuthenticationError('Not logged in');
     },
-    orders: async(parent, args, context, info) => {
-      return Order.find({}).populate("products")
-    },
-    users: async (parent, args, context, info) => {
-      return User.find({}).populate("orders").select("-password");
-    },
+    users: async (parent, args, context) => {
+      if (context.user) {
+        const user = await User.findById(context.user._id).populate({
+          path: 'orders.products',
+          populate: 'category'
+        });
 
+        user.orders.sort((a, b) => b.purchaseDate - a.purchaseDate);
+
+        return user;
+      }
+
+      throw new AuthenticationError('Not logged in');
+    },
     user: async (parent, { _id }, context, info) => {
       return User.findById(_id).populate("orders").select("-password");
     },
@@ -47,59 +51,61 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
     //optionally gets all products by category
-    products: async (parent, { category }, context, info) => {
-      //NOTE: if there is only one product in the category this query will break because the typedef expects an array of products
+    products: async (parent, { category, name }) => {
+      const params = {};
+
       if (category) {
-        const products = await Product.find({}).populate("category");
-
-        return products.filter((item) => {
-          return item.category[0].name === category;
-        });
+        params.category = category;
       }
 
-      return Product.find({}).populate("category");
-    },
-
-    product: async (parent, { _id }, context, info) => {
-      return Product.findById(_id).populate("category");
-    },
-
-    checkout: async (parent, args, context) => {
-      const url = new URL(context.headers.referer).origin;
-      const order = new Order({ products: args.products });
-      const line_items = [];
-
-      const { products } = await order.populate('products');
-
-      for (let i = 0; i < products.length; i++) {
-        const product = await stripe.products.create({
-          name: products[i].name,
-          description: products[i].description,
-          images: [`${url}/images/${products[i].image}`]
-        });
-
-        const price = await stripe.prices.create({
-          product: product.id,
-          unit_amount: products[i].price * 100,
-          currency: 'usd',
-        });
-
-        line_items.push({
-          price: price.id,
-          quantity: 1
-        });
+      if (name) {
+        params.name = {
+          $regex: name
+        };
       }
 
-      const session = await stripe.checkout.sessions.create({
-        payment_method_types: ['card'],
-        line_items,
-        mode: 'payment',
-        success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
-        cancel_url: `${url}/`
-      });
+      return await Product.find(params).populate('category');
+    },
+    product: async (parent, { _id }) => {
+      return await Product.findById(_id).populate('category');
+    },
 
-      return { session: session.id };
-    }
+    // checkout: async (parent, args, context) => {
+    //   const url = new URL(context.headers.referer).origin;
+    //   const order = new Order({ products: args.products });
+    //   const line_items = [];
+
+    //   const { products } = await order.populate('products');
+
+    //   for (let i = 0; i < products.length; i++) {
+    //     const product = await stripe.products.create({
+    //       name: products[i].name,
+    //       description: products[i].description,
+    //       images: [`${url}/images/${products[i].image}`]
+    //     });
+
+    //     const price = await stripe.prices.create({
+    //       product: product.id,
+    //       unit_amount: products[i].price * 100,
+    //       currency: 'usd',
+    //     });
+
+    //     line_items.push({
+    //       price: price.id,
+    //       quantity: 1
+    //     });
+    //   }
+
+    //   const session = await stripe.checkout.sessions.create({
+    //     payment_method_types: ['card'],
+    //     line_items,
+    //     mode: 'payment',
+    //     success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
+    //     cancel_url: `${url}/`
+    //   });
+
+    //   return { session: session.id };
+    // }
 
   },
 
