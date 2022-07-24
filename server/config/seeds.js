@@ -10,7 +10,8 @@ db.once('open', async () => {
     { name: 'Fruits and Vegetables' },
     { name: 'Drinks' },
     { name: 'Snacks' },
-    { name: 'Bread' }
+    { name: 'Bread' },
+    { name: 'Grains and Legumes' }
   ]);
 
   console.log('categories seeded');
@@ -622,7 +623,88 @@ db.once('open', async () => {
                 image: 'multigrain-bread.jpg',
                 price: 4.99,
                 quantity: 100
-              }
+              },
+              {
+                name: 'Brown Rice',
+                category: categories[6]._id,
+                description:
+                  'Lundberg organic brown short grain rice.',
+                image: 'shortgrain.jpg',
+                price: 7.99,
+                quantity: 100
+              },
+              {
+                name: 'Jasmine White Rice',
+                category: categories[6]._id,
+                description: 'Lundberg Organic California White Jasmine Rice.',
+                image: 'white-jasmine.jpg',
+                price: 7.99,
+                quantity: 100
+              },
+              {
+                name: 'Jasmine Brown Rice',
+                category: categories[6]._id,
+                description:
+                  'Lundberg Organic California Brown Jasmine Rice.',
+                image: 'jasmine-brown.jpg',
+                price: 7.99,
+                quantity: 100
+              },
+              {
+                name: 'Basmati Rice',
+                category: categories[6]._id,
+                description:
+                  'Lundberg Organic California White Basmati Rice',
+                image: 'white-basmati.jpg',
+                price: 7.99,
+                quantity: 100
+              },
+              {
+                name: 'Red Lentils',
+                category: categories[6]._id,
+                description:
+                  'Bob\'s Red Mill Red Lentils heritage Beans',
+                image: 'red-lentil.jpg',
+                price: 7.99,
+                quantity: 100
+              },
+              {
+                  name: 'Green Lentils',
+                  category: categories[6]._id,
+                  description:
+                    'Bob\'s Red Mill petite French Green Lentils',
+                  image: 'green-lentil.jpg',
+                  price: 7.99,
+                  quantity: 100
+                },
+                {
+                  name: 'Chickpeas',
+                  category: categories[6]._id,
+                  description:
+                    'Organic raw chickpeas',
+                  image: 'chickpea.jpg',
+                  price: 5.99,
+                  quantity: 300
+                },
+                {
+                  name: 'Black Beans',
+                  category: categories[6]._id,
+                  description:
+                    'Organic Black Beans',
+                  image: 'black-bean.jpg',
+                  price: 5.99,
+                  quantity: 100
+                },
+                {
+                  name: 'Cannellini Beans',
+                  category: categories[6]._id,
+                  description:
+                    'Organic Cannellini Beans',
+                  image: 'white-bean.jpg',
+                  price: 5.99,
+                  quantity: 100
+                }
+                
   ]);
 
   console.log('products seeded');
