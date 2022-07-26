@@ -162,6 +162,14 @@ export const GET_ORDERS = gql`
   }
 `;
 
+export const QUERY_CHECKOUT = gql`
+  query checkout($products: [ID]!) {
+    checkout(products: $products) {
+      session
+    }
+  }
+`;
+
 export const GET_CHECKOUT = gql`
   query checkout($products: [ID]!) {
     checkout(products: $products) {
