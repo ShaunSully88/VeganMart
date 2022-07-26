@@ -42,7 +42,7 @@ const typeDefs = gql`
   }
 
   type Query {
-    me: User
+    me: Auth
     users: [User]
     user(_id: ID!): User
     products(category: String): [Product]
