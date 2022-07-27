@@ -67,11 +67,8 @@ const resolvers = {
 
       return Product.find({}).populate("category");
     },
-<<<<<<< HEAD
 
-=======
     
->>>>>>> 5d4cb4b58e9fc6cc14d1452260e85c43ae7fefb9
     product: async (parent, { _id }) => {
       return await Product.findById(_id).populate('category');
     },
