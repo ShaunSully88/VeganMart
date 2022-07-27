@@ -134,7 +134,7 @@
     border: none;
     outline: none;
     cursor: pointer;
-    margin: 0 1px;
+    margin: auto 0;
     color: var(--light);
     background: none;
   }
