@@ -122,23 +122,21 @@
   }
 
   .labels {
-    font-size: 16pt;
     display: flex;
     justify-content: space-evenly;
     width: 100%;
   }
   
   button {
-    font-size: 1rem;
+    font-size: 16pt;
     text-decoration: none;
     padding: 0.25rem 1rem;
-    border-radius: .5rem;
     border: none;
     outline: none;
     cursor: pointer;
     margin: 0 1px;
     color: var(--light);
-    background-color: var(--secondary);
+    background: none;
   }
   
   button:hover {
