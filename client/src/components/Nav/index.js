@@ -40,8 +40,9 @@ function Nav() {
   }
 
   return (
-    <header className="flex-row px-1">
-      <h1>
+    <header className="flex-row">
+      <div className="mainlinks px-1">
+      <h1 className="brand">
         <Link to="/">
           VEGEMART
         </Link>
@@ -50,6 +51,32 @@ function Nav() {
       <nav>
         {showNavigation()}
       </nav>
+      </div>
+
+      <div className="sections">
+        <ul className="labels">
+          <il>
+            <Link to="/freshproduce">
+              fresh produce
+            </Link>
+          </il>
+          <il>
+            <Link to="/grains">
+              grains & legumes
+            </Link>
+          </il>
+          <il>
+            <Link to="/dairy">
+              dairy alternatives
+            </Link>
+          </il>
+          <il>
+            <Link to="/meat">
+              meat alternatives
+            </Link>
+          </il>
+        </ul>
+      </div>
     </header>
   );
 }
