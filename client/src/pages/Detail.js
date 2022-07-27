@@ -1,4 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import IconButton from '@mui/material/IconButton';
+import DeleteIcon from '@mui/icons-material/Delete';
+import Grid from '@mui/material/Grid';
+
 import { Link, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
@@ -13,6 +18,8 @@ import {
 import { QUERY_PRODUCTS } from '../utils/queries';
 import { idbPromise } from '../utils/helpers';
 import spinner from '../assets/spinner.gif';
+
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 function Detail() {
   const [state, dispatch] = useStoreContext();
@@ -48,6 +55,20 @@ function Detail() {
     }
   }, [products, data, loading, dispatch, id]);
 
+  const theme = createTheme({
+    spacing: 5,
+    palette: {
+      primary: {
+        main: '#44AF69',
+        contrastText: '#fff',
+      },
+      secondary: {
+        main: '#7D451B',
+        contrastText: '#fff',
+      },
+    }
+  });
+
   const addToCart = () => {
     const itemInCart = cart.find((cartItem) => cartItem._id === id);
     if (itemInCart) {
@@ -81,28 +102,34 @@ function Detail() {
   return (
     <>
       {currentProduct && cart ? (
-        <div className="container my-1">
-          <Link to="/">← Back to Products</Link>
+        <div className="container my-2">
+          <Grid container spacing={2}>
+            <Grid item xs={6}>
+              <img
+                src={`/images/${currentProduct.image}`}
+                alt={currentProduct.name}
+              />
+            </Grid>
+            <Grid item xs={6}>
+              <h2>{currentProduct.name}</h2>
+              <p>{currentProduct.description}</p>
+              <p>
+                <strong>Price:</strong>${currentProduct.price}{' '}
+              </p>
+              <p>
+                <ThemeProvider theme={theme}>
+                <IconButton color="primary" sx={{ mr: 2 }} onClick={addToCart} aria-label="add to shopping cart">
+                  <AddShoppingCartIcon />
+                </IconButton>
 
-          <h2>{currentProduct.name}</h2>
-
-          <p>{currentProduct.description}</p>
-
-          <p>
-            <strong>Price:</strong>${currentProduct.price}{' '}
-            <button onClick={addToCart}>Add to Cart</button>
-            <button
-              disabled={!cart.find((p) => p._id === currentProduct._id)}
-              onClick={removeFromCart}
-            >
-              Remove from Cart
-            </button>
-          </p>
-
-          <img
-            src={`/images/${currentProduct.image}`}
-            alt={currentProduct.name}
-          />
+                <IconButton color="secondary" disabled={!cart.find((p) => p._id === currentProduct._id)}
+                    onClick={removeFromCart} aria-label="delete">
+                  <DeleteIcon />
+                </IconButton>              
+                </ThemeProvider>
+              </p>
+            </Grid>
+          </Grid>
         </div>
       ) : null}
       {loading ? <img src={spinner} alt="loading" /> : null}

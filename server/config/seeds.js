@@ -10,7 +10,7 @@ db.once('open', async () => {
     { name: 'Fruits and Vegetables' },
     { name: 'Drinks' },
     { name: 'Snacks' },
-    { name: 'Bread' },
+    { name: 'Bakery' },
     { name: 'Grains and Legumes' }
   ]);
 
@@ -385,7 +385,7 @@ db.once('open', async () => {
           quantity: 500
         },
         {
-          name: 'Lemon.',
+          name: 'Lemon',
           category: categories[2]._id,
           description:
             'Lemon.',
@@ -655,7 +655,7 @@ db.once('open', async () => {
                 category: categories[6]._id,
                 description:
                   'Lundberg Organic California White Basmati Rice',
-                image: 'white-basmati.jpg',
+                image: 'white-basmati.jpeg',
                 price: 7.99,
                 quantity: 100
               },

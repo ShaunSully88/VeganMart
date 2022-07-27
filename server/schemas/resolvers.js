@@ -23,6 +23,7 @@ const resolvers = {
 
       throw new AuthenticationError('Not logged in');
     },
+
     users: async (parent, args, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id).populate({
@@ -37,6 +38,7 @@ const resolvers = {
 
       throw new AuthenticationError('Not logged in');
     },
+
     user: async (parent, { _id }, context, info) => {
       return User.findById(_id).populate("orders").select("-password");
     },
@@ -50,6 +52,7 @@ const resolvers = {
 
       throw new AuthenticationError("Not logged in");
     },
+
     //optionally gets all products by category
     products: async (parent, { category }, context, info) => {
       console.log(category)
@@ -64,7 +67,11 @@ const resolvers = {
 
       return Product.find({}).populate("category");
     },
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 5d4cb4b58e9fc6cc14d1452260e85c43ae7fefb9
     product: async (parent, { _id }) => {
       return await Product.findById(_id).populate('category');
     },
