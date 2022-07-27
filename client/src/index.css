@@ -115,7 +115,7 @@
   .sections {
     display: flex;
     justify-content: space-evenly;
-    width: 100vw;
+    /* width: 100vw; */
     height: 60px;
     margin: 0px;
     background: var(--secondary);
@@ -213,6 +213,11 @@
     margin-top: var(--spacing-two);
     margin-bottom: var(--spacing-two);
   }
+
+  .my-5 {
+    margin-top: 3em;
+    margin-bottom: 3em;
+  }
   
   .px-1 {
     padding-right: var(--spacing-one);
@@ -222,6 +227,11 @@
   .px-2 {
     padding-right: var(--spacing-two);
     padding-left: var(--spacing-two);
+  }
+
+  .px-5{
+    padding-right: 3em;
+    padding-left: 3em;
   }
   
   .py-1 {
@@ -234,8 +244,12 @@
     padding-bottom: var(--spacing-two);
   }
   
+  .text-center{
+    text-align: center;
+  }
+
   .card {
-    width: 25%;
+    /* width: 25%; */
     text-align: center;
   }
   
@@ -248,3 +262,20 @@
       width: 100%;
     }
   }
+
+.product-list-image{
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* Slider settings */
+.slick-prev, .slick-next {
+  width: 60px;
+  height: 53px;
+}
+
+.slick-prev:before, .slick-next:before {
+  font-size: 60px;
+  color: var(--primary);
+}
