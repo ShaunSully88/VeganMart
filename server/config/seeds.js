@@ -10,7 +10,7 @@ db.once('open', async () => {
     { name: 'Fruits and Vegetables' },
     { name: 'Drinks' },
     { name: 'Snacks' },
-    { name: 'Bread' },
+    { name: 'Bakery' },
     { name: 'Grains and Legumes' }
   ]);
 
