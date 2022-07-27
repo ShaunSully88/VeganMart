@@ -1,9 +1,15 @@
-import React from "react";
+import * as React from 'react';
 import { Link } from "react-router-dom";
 import { pluralize } from "../../utils/helpers"
 import { useStoreContext } from "../../utils/GlobalState";
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
+
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import IconButton from '@mui/material/IconButton';
+import DeleteIcon from '@mui/icons-material/Delete';
+
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 function ProductItem(item) {
   const [state, dispatch] = useStoreContext();
@@ -39,6 +45,20 @@ function ProductItem(item) {
     }
   }
 
+  const theme = createTheme({
+    spacing: 5,
+    palette: {
+      primary: {
+        main: '#44AF69',
+        contrastText: '#fff',
+      },
+      secondary: {
+        main: '#7D451B',
+        contrastText: '#fff',
+      },
+    }
+  });
+
   return (
     <div className="card px-1 py-1">
       <Link to={`/products/${_id}`}>
@@ -52,7 +72,12 @@ function ProductItem(item) {
         <div>{quantity} {pluralize("item", quantity)} in stock</div>
         <span>${price}</span>
       </div>
-      <button onClick={addToCart}>Add to cart</button>
+      <ThemeProvider theme={theme}>
+      <IconButton variant="outlined" color="primary" onClick={addToCart} aria-label="add to shopping cart">
+        <AddShoppingCartIcon />
+      </IconButton>
+      </ThemeProvider>
+
     </div>
   );
 }
