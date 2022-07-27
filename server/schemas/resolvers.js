@@ -51,21 +51,20 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
     //optionally gets all products by category
-    products: async (parent, { category, name }) => {
-      const params = {};
-
+    products: async (parent, { category }, context, info) => {
+      console.log(category)
+      //NOTE: if there is only one product in the category this query will break because the typedef expects an array of products
       if (category) {
-        params.category = category;
+        const products = await Product.find({}).populate("category");
+
+        return products.filter((item) => {
+          return item.category[0].name === category;
+        });
       }
 
-      if (name) {
-        params.name = {
-          $regex: name
-        };
-      }
-
-      return await Product.find(params).populate('category');
+      return Product.find({}).populate("category");
     },
+
     product: async (parent, { _id }) => {
       return await Product.findById(_id).populate('category');
     },
@@ -134,6 +133,7 @@ const resolvers = {
       return { token, user };
     },
     addOrder: async (parent, { products }, context) => {
+      console.log(products)
       if (context.user) {
         const order = await (await Order.create({ products })).populate('products');
         console.log(order)

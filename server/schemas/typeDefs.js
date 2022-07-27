@@ -21,8 +21,8 @@ const typeDefs = gql`
   }
 
   type Product {
-    _id: ID
-    name: String
+    _id: ID!
+    name: String!
     description: String
     price: Float
     image: String
@@ -45,7 +45,7 @@ const typeDefs = gql`
     me: User
     users: [User]
     user(_id: ID!): User
-    products(category: String): [Product]
+    products(category: ID, name: String): [Product]
     product(_id: ID!): Product
     categories: [Category]
     order(_id: ID!): Order
