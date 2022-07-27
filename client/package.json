@@ -1,7 +1,7 @@
 {
   "name": "client",
   "version": "1.0.0",
-  "homepage": "/build",
+  "homepage": "/",
   "description": "",
   "main": "index.js",
   "proxy": "http://localhost:3001/",
@@ -25,7 +25,7 @@
     "slick-carousel": "^1.8.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
