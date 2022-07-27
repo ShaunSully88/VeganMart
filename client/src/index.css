@@ -116,7 +116,7 @@
     display: flex;
     justify-content: space-evenly;
     width: 100vw;
-    height: 50px;
+    height: 60px;
     margin: 0px;
     background: var(--secondary);
   }
@@ -128,7 +128,7 @@
   }
   
   button {
-    font-size: 16pt;
+    font-size: 14pt;
     text-decoration: none;
     padding: 0.25rem 1rem;
     border: none;
