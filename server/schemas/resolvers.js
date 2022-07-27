@@ -54,18 +54,18 @@ const resolvers = {
     },
 
     //optionally gets all products by category
-    products: async (parent, { category }, context, info) => {
+    products: async (parent, params, { category }, context, info) => {
       console.log(category)
       //NOTE: if there is only one product in the category this query will break because the typedef expects an array of products
       if (category) {
-        const products = await Product.find({}).populate("category");
+        const products = await Product.find(params).populate("category");
 
         return products.filter((item) => {
           return item.category[0].name === category;
         });
       }
 
-      return Product.find({}).populate("category");
+      return Product.find(params).populate("category");
     },
 
     
