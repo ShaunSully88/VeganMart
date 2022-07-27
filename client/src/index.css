@@ -115,8 +115,9 @@
   .sections {
     display: flex;
     justify-content: space-evenly;
-    width: 100%;
+    width: 100vw;
     height: 50px;
+    margin: 0px;
     background: var(--secondary);
   }
 
@@ -136,6 +137,7 @@
     outline: none;
     cursor: pointer;
     margin: 0 1px;
+    color: var(--light);
     background-color: var(--secondary);
   }
   

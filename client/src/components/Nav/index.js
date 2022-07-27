@@ -53,7 +53,7 @@ function Nav() {
       </nav>
       </div>
 
-      <div className="sections">
+      {/* <div className="sections">
         <ul className="labels">
           <il>
             <Link to="/freshproduce">
@@ -76,7 +76,7 @@ function Nav() {
             </Link>
           </il>
         </ul>
-      </div>
+      </div> */}
     </header>
   );
 }
