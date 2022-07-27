@@ -7,27 +7,26 @@ import { GET_PRODUCTS } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 import spinner from '../../assets/spinner.gif';
 
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
+
 import Slider from "react-slick";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
-    <div
-      className={className}
+      <NavigateNextIcon className={className}
       style={{ ...style, display: "block"}}
-      onClick={onClick}
-    />
+      onClick={onClick}/>
   );
 }
 
 function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
-    <div
-      className={className}
+    <NavigateBeforeIcon className={className}
       style={{ ...style, display: "block"}}
-      onClick={onClick}
-    />
+      onClick={onClick}/>
   );
 }
 
@@ -45,7 +44,30 @@ function ProductList() {
     slidesToShow: 4,
     slidesToScroll: 4,
     nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />
+    prevArrow: <SamplePrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
 
   useEffect(() => {
@@ -78,7 +100,7 @@ function ProductList() {
   }
 
   return (
-    <div className="my-5 px-2">
+    <div className="my-5">
       {state.products.length ? (
         <Slider {...settings}>
           {filterProducts().map((product) => (

@@ -67,18 +67,23 @@ function ProductItem(item) {
           src={`/images/${image}`}
           className="product-list-image"
         />
-        <p>{name}</p>
       </Link>
-      <div>
-        <div>{quantity} {pluralize("item", quantity)} in stock</div>
-        <span>${price}</span>
+      <div className='pCard-info'>
+        <Link to={`/products/${_id}`}>
+          <h4>{name}</h4>
+        </Link>
+        <div className='pCard-info-add'>
+          <ThemeProvider theme={theme}>
+          <IconButton style={{border: "3px solid"}} sx={{ mr: 2 }} variant="outlined" color="primary" onClick={addToCart} aria-label="add to shopping cart">
+            <AddShoppingCartIcon />
+          </IconButton>
+          </ThemeProvider>
+          <div>
+            <div>{quantity} {pluralize("item", quantity)} in stock</div>
+            <span>${price}</span>
+          </div>
+        </div>
       </div>
-      <ThemeProvider theme={theme}>
-      <IconButton variant="outlined" color="primary" onClick={addToCart} aria-label="add to shopping cart">
-        <AddShoppingCartIcon />
-      </IconButton>
-      </ThemeProvider>
-
     </div>
   );
 }

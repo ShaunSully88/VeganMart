@@ -233,6 +233,14 @@
     padding-right: 3em;
     padding-left: 3em;
   }
+
+  .pl-5{
+    padding-left: 3em;
+  }
+
+  .pr-3{
+    padding-right: 1em;
+  }
   
   .py-1 {
     padding-top: var(--spacing-one);
@@ -270,12 +278,55 @@
 }
 
 /* Slider settings */
-.slick-prev, .slick-next {
-  width: 60px;
-  height: 53px;
+.slick-prev{
+  left: -77px;
+  display: block !important;
+  fill: var(--secondary) !important;
+  background-color: #ebebeb;
+  border-radius: 60px 0px 0px 60px;
+  width: 90px !important;
+  height: 120px !important;
 }
 
-.slick-prev:before, .slick-next:before {
-  font-size: 60px;
-  color: var(--primary);
+.slick-next{
+  right: -77px;
+  display: block !important;
+  fill: var(--secondary) !important;
+  background-color: #ebebeb;
+  border-radius: 0px 60px 60px 0px;
+  width: 90px !important;
+  height: 120px !important;
+}
+
+.slick-next:hover, .slick-prev:hover{
+  background-color: #ebebeb;
+  fill: var(--primary) !important;
+}
+
+.slick-slider {
+  background-color: #ebebeb;
+  padding: 1em;
+}
+
+.pCard-info {
+  background-color: var(--secondary);
+  color: var(--light);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: left;
+  padding: 5px 20px 10px;
+  height: 160px;
+  overflow: hidden;
+}
+
+.pCard-info h4{
+  text-align: center;
+}
+
+.pCard-info-add{
+  display: flex;
+  align-items: flex-start;
+  margin-top: 4px;
+  justify-content: space-evenly;
 }
