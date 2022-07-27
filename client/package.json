@@ -1,6 +1,7 @@
 {
   "name": "client",
   "version": "1.0.0",
+  "homepage": "/build",
   "description": "",
   "main": "index.js",
   "proxy": "http://localhost:3001/",
