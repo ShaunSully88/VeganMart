@@ -13,6 +13,7 @@ Veggie Mart is an online grocery store that sells only vegan products, save the 
 
 ## Installation
 
+Users can clone code to their personal device, there should be a server and client directory. Once downloaded, running "npm run develop" from root directory will start up the application.
 
 ## Usage
 
@@ -36,3 +37,4 @@ Eric Kohler - https://github.com/eikohler
 Follow the link for more info about the license [isc](https://choosealicense.com/licenses/isc)
 
 ## Mock-Up
+![VegemartMockUp](https://user-images.githubusercontent.com/98717384/181516707-0ce484db-1dc7-4b96-b47c-9ceb49c10589.png)
