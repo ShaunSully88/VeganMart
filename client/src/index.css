@@ -330,3 +330,12 @@
   margin-top: 4px;
   justify-content: space-evenly;
 }
+
+.forms{
+  width: auto;
+}
+
+.text-center{
+  margin-top: 5px;
+  text-align: center;
+}

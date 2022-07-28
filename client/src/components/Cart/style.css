@@ -7,22 +7,16 @@
   max-height: 60%;
   background-color: var(--light);
   overflow: auto;
-  padding: .5rem;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, .5);
-  border-bottom-left-radius: .5rem;
-}
-
-.cart h2 {
-  font-size: 1.5rem;
-  border-bottom: 1px solid var(--dark);
-  padding-bottom: .5rem;
-  margin: 1rem 0;
+  padding: 0.5rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+  border-bottom-left-radius: 0.5rem;
+  text-align: center;
 }
 
 .cart .close {
   position: absolute;
-  top: .5rem;
-  right: .5rem;
+  top: 0.5rem;
+  right: 0.5rem;
   cursor: pointer;
   color: var(--tertiary);
 }
@@ -35,28 +29,27 @@
   position: fixed;
   top: 2%;
   right: 1%;
-  font-size: 2rem;
   cursor: pointer;
-  background-color: var(--secondary);
-  border-radius: 50%;
-  padding: .25rem;
-  width: 50px;
-  height: 50px;
 }
 
 .cart-closed:hover {
-  transform: rotate(8deg);
+  cursor: pointer;
+}
+
+.border-t{
+  margin-top: 20px;
+  padding: 5px 5px 0;
+  border-top: 1px black solid;
 }
 
 .cart img {
-  width: 70px;
   margin-right: 1rem;
 }
 
 .cart input {
   width: 50px;
   padding: 0;
-  margin: 0 .5rem 1rem 0;
+  margin: 0 0.5rem 1rem 0;
 }
 
 @media screen and (max-width: 768px) {
@@ -72,4 +65,58 @@
     position: relative;
     margin: 0 auto;
   }
+}
+
+.cart-items-container {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.cart-item-img{
+  width: 65px;
+}
+
+.cart-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.delete-btn {
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  position: relative;
+  transition: all 250ms;
+  width: auto;
+  font-size: 14px;
+}
+
+.delete-btn:hover,
+.delete-btn:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.delete-btn:hover {
+  transform: translateY(-1px);
+}
+
+.delete-btn:active {
+  background-color: #F0F0F1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
 }
